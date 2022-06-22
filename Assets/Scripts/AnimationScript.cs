@@ -4,6 +4,7 @@ public class AnimationScript : MonoBehaviour
 {
     private Animator _animation;
     private PlayerMover _playerMover;
+    private float _playerSpeed;
     void Start()
     {
         _animation = GetComponent<Animator>();

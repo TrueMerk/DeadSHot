@@ -24,6 +24,7 @@ public class StartWaypoint : AbstractWaypoint
 
     private void Next()
     {
+        if(_mesh != null)
         _mesh.SetDestination(_nextPoint.transform.position);
         Destroy(this);
     }

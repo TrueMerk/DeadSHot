@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9ef83ffbe1b2b94d8bc41093e616c1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enemys:
+  EnemyList:
   - {fileID: 1968569152}
   - {fileID: 681948039}
 --- !u!1 &65346039
@@ -399,7 +399,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9ef83ffbe1b2b94d8bc41093e616c1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enemys:
+  EnemyList:
   - {fileID: 1202355697}
   - {fileID: 707287710}
 --- !u!4 &434737429
@@ -860,7 +860,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5f9d191ffcc3314c92198bbef95ec97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  points:
+  _points:
   - {fileID: 15326900}
   - {fileID: 434737428}
   _wayPointsList:
@@ -1123,7 +1123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c51643bf00cd20548be5260c29b85dd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camSens: 0.05
+  _camSens: 0.05
 --- !u!4 &1349428000 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4764624344734074, guid: c6865c562fd3f2841a92dc0cbbd6b4b4, type: 3}
@@ -1257,8 +1257,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d647cb0162e2c5c49b890fb1a1e882e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  poolCount: 3
-  autoExpand: 1
+  _poolCount: 3
+  _autoExpand: 1
   _bulletPrefab: {fileID: 4332745652013394746, guid: fe0b47894c4158b4ab23737bbc2a8eef, type: 3}
   _shotDir: {fileID: 1582584590}
 --- !u!1001 &1729626611

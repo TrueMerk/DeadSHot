@@ -6,9 +6,8 @@ using UnityEngine.Serialization;
 
 public class PlayerMover : MonoBehaviour
 {
-    [FormerlySerializedAs("Points")] [SerializeField]
-    private List<EnemySpot> _points = new List<EnemySpot>();
-    [SerializeField] private List<GameObject> _wayPointsList = new List<GameObject>();
+    [FormerlySerializedAs("Points")] [SerializeField] private List<EnemySpot> _points = new List<EnemySpot>();
+    [SerializeField] List<GameObject> _wayPointsList = new List<GameObject>();
     private AbstractWaypoint _waypoint;
     private GameObject _nextPoint;
     private NavMeshAgent _mesh;
@@ -45,7 +44,8 @@ public class PlayerMover : MonoBehaviour
         if (_wayPointsList.Count>0)
         {    
             _nextPoint = _wayPointsList[0].gameObject;
-            _mesh.SetDestination(_nextPoint.transform.position);
+            if (_mesh != null)
+                _mesh.SetDestination(_nextPoint.transform.position);
             _wayPointsList.Remove(_wayPointsList[0]);
         }
         
