@@ -8,7 +8,7 @@ public class PlayerMover : MonoBehaviour
 {
     [FormerlySerializedAs("Points")] [SerializeField]
     private List<EnemySpot> _points = new List<EnemySpot>();
-    [SerializeField] List<GameObject> _wayPointsList = new List<GameObject>();
+    [SerializeField] private List<GameObject> _wayPointsList = new List<GameObject>();
     private AbstractWaypoint _waypoint;
     private GameObject _nextPoint;
     private NavMeshAgent _mesh;

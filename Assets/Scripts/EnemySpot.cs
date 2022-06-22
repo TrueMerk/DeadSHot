@@ -5,11 +5,11 @@ using UnityEngine.Serialization;
 
 public class EnemySpot : MonoBehaviour
 {
-    [FormerlySerializedAs("Enemys")] [SerializeField] public List<Enemy> enemys = new List<Enemy>();
+    [FormerlySerializedAs("Enemys")] [SerializeField] public List<Enemy> EnemyList = new List<Enemy>();
     public event Action SpotIsClearEvent;
     void Start()
     {
-        foreach (var vEnemy in enemys)
+        foreach (var vEnemy in EnemyList)
         {
             vEnemy.DieEvent += SpotIsClear;
         }
@@ -18,8 +18,8 @@ public class EnemySpot : MonoBehaviour
     void SpotIsClear()
     {
         
-        enemys.Remove(enemys[0]);
-        if (enemys.Count < 1)
+        EnemyList.Remove(EnemyList[0]);
+        if (EnemyList.Count < 1)
         {
             Debug.Log("Переход к следующей точке");
             SpotIsClearEvent?.Invoke();

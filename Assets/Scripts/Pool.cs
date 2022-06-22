@@ -7,7 +7,7 @@ using Object = UnityEngine.Object;
 public class Pool<T> where T: MonoBehaviour
 {
    private T _bullPrefab;
-   public bool autoExpand = true;
+   public bool AutoExpand = true;
    private Transform _container;
 
    private List<T> _pool;
@@ -62,7 +62,7 @@ public class Pool<T> where T: MonoBehaviour
    {
       if (this.HasFreeElement(out var element))
          return element;
-      if (this.autoExpand)
+      if (this.AutoExpand)
          return this.CreateObject(true);
 
       throw new Exception("No free GameObjects in pool");

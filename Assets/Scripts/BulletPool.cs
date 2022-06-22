@@ -12,7 +12,7 @@ public class BulletPool : MonoBehaviour
     {
         this._pool = new Pool <BulletMover> (this._bulletPrefab, this._poolCount, this.transform)
         {
-            autoExpand = this._autoExpand
+            AutoExpand = this._autoExpand
         };
     }
 
