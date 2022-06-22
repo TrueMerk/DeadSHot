@@ -2,17 +2,17 @@ using UnityEngine;
 
 public class BulletPool : MonoBehaviour
 {
-    [SerializeField] private int poolCount = 3;
-    [SerializeField] private bool autoExpand = false;
+    [SerializeField] private int _poolCount = 3;
+    [SerializeField] private bool _autoExpand = false;
     [SerializeField] private BulletMover _bulletPrefab;
     [SerializeField] private Transform _shotDir;
     private Pool <BulletMover> _pool;
 
     private void Start()
     {
-        this._pool = new Pool <BulletMover> (this._bulletPrefab, this.poolCount, this.transform)
+        this._pool = new Pool <BulletMover> (this._bulletPrefab, this._poolCount, this.transform)
         {
-            autoExpand = this.autoExpand
+            autoExpand = this._autoExpand
         };
     }
 

@@ -7,7 +7,7 @@ using Object = UnityEngine.Object;
 public class Pool<T> where T: MonoBehaviour
 {
    private T _bullPrefab;
-   public bool autoExpand { get; set; }
+   public bool autoExpand = true;
    private Transform _container;
 
    private List<T> _pool;

@@ -6,7 +6,8 @@ using UnityEngine.Serialization;
 
 public class PlayerMover : MonoBehaviour
 {
-    [FormerlySerializedAs("Points")] [SerializeField] List<EnemySpot> points = new List<EnemySpot>();
+    [FormerlySerializedAs("Points")] [SerializeField]
+    private List<EnemySpot> _points = new List<EnemySpot>();
     [SerializeField] List<GameObject> _wayPointsList = new List<GameObject>();
     private AbstractWaypoint _waypoint;
     private GameObject _nextPoint;
@@ -18,7 +19,7 @@ public class PlayerMover : MonoBehaviour
     private void Start()
     {
         _mesh = GetComponent<NavMeshAgent>();
-        foreach (var vPoints in points)
+        foreach (var vPoints in _points)
         {
             vPoints.SpotIsClearEvent+= Next;
         }
@@ -40,7 +41,7 @@ public class PlayerMover : MonoBehaviour
     private void Next()
     {
         
-        points.Remove(points[0]);
+        _points.Remove(_points[0]);
         if (_wayPointsList.Count>0)
         {    
             _nextPoint = _wayPointsList[0].gameObject;
@@ -48,12 +49,12 @@ public class PlayerMover : MonoBehaviour
             _wayPointsList.Remove(_wayPointsList[0]);
         }
         
-        if (points.Count > 0)
+        if (_points.Count > 0)
         {
-            points[0].gameObject.SetActive(true);
+            _points[0].gameObject.SetActive(true);
         }
         
-        if (points.Count < 1)
+        if (_points.Count < 1)
         {
             LevelCompleteEvent?.Invoke();
         }
